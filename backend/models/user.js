@@ -11,5 +11,11 @@ const userSchema = new mongoose.Schema({
     password : {
         type : String,
         required : true
-    }
-})
+    }, 
+    list : [{
+        type: mongoose.Types.ObjectId,
+        ref: "ListModel"
+    }]
+});
+
+module.exports = mongoose.model('UserModel', userSchema);
